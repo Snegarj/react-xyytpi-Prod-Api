@@ -9,12 +9,14 @@ import Typography from '@mui/material/Typography';
 import axios from 'axios';
 import Charts from './chart';
 import './style.css';
+import Category from './category';
 
 export default function App() {
   const [allData, setAllData] = useState([]);
   const [filteredData, setFilteredData] = useState(allData);
   const [filterCategory, setCategory] = useState(allData);
   const [active, setactive] = useState(false);
+  const [status, setStatus] = useState(false);
 
   useEffect(() => {
     axios('https://fakestoreapi.com/products')
@@ -69,7 +71,18 @@ export default function App() {
               <div id="card">
                 <div id="img">
                   <img src={product.image} />
-                  <button>Category</button>
+                  <button
+                    onClick={() => {
+                      if (status) {
+                        setStatus(true);
+                        <Category product={product} />
+                      } else {
+                        return <Category product={product} />
+                      }
+                    }}
+                  >
+                    Category
+                  </button>
                 </div>
                 <h3>{product.title}</h3>
 
