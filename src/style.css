@@ -39,7 +39,7 @@ button {
   display: flex;
   flex-direction: column;
   margin: 15px;
-  height: 380px;
+  height: 385px;
   width: 310px;
 }
 img {
@@ -56,7 +56,7 @@ h3 {
 h3,
 p {
   font-family: 'Times New Roman', Times, serif;
-  margin: 2px;
+  margin: 5px;
 }
 p {
   overflow: auto;
@@ -91,3 +91,15 @@ canvas {
   height: 406px;
   width: 100vw;
 }
+button:hover {
+  color: #4f2cce;
+  border: 1px solid #4f2cce;
+
+  background: transparent;
+}
+h3 {
+  color: #272d4e;
+  cursor: pointer;
+}
+h3:hover {
+  text-shadow: 0 15.36px 17.896px #272D4E,0 -1.5px 1px #272D4E}
