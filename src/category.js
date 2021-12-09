@@ -24,18 +24,20 @@ const Category = ({ product }) => {
       {allData.map((data) => {
         if (id == data.id) {
           console.log('Hello', data.id);
-          <Card>
-            <Card.Header>Featured</Card.Header>
-            <Card.Img variant="top" src={data.img} />
-            <Card.Body>
-              <Card.Title>{data.title}</Card.Title>
-              <Card.Text>
-                With supporting text below as a natural lead-in to additional
-                content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>;
+          return (
+            <Card>
+              <Card.Header>{data.title}</Card.Header>
+              <Card.Img variant="top" src={data.image} />
+              <Card.Body>
+                <Card.Title>{data.category}</Card.Title>
+                <Card.Text>
+                  <p>Price  {data.price}</p>
+                  <p>Count  {data.rating.count}</p>
+                </Card.Text>
+                <Button variant="primary">Add Cart</Button>
+              </Card.Body>
+            </Card>
+          );
         }
       })}
     </>
